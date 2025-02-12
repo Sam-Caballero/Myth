@@ -1,0 +1,236 @@
+$fontFamily: "Dancing Script", Arial, Helvetica, sans-serif;
+$color: #79d7ed;
+$colorText: #0d039f;
+
+@mixin textConfiguration($fSize, $fWeight) {
+    font-size: $fSize;
+    font-weight: $fWeight;
+    text-align: center;
+}
+@mixin center($display, $justifyContent, $alignItems) {
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+%button {
+    display: block;
+    border: none;
+    border-radius: 30px;
+    color: $colorText;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    font-weight: 600;
+    background-color: $color;
+    cursor: pointer;
+}
+
+body {
+    width: 100%;
+    color: $colorText;
+    @include textConfiguration(clamp(.5rem, 5vw,1.25rem), 400);
+    font-family: $fontFamily;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: .01rem;
+    line-height: 1.25;
+}
+
+header {
+    &.header {
+        width: 100%;
+        padding: 1rem .8rem;
+        box-sizing: border-box;
+        border: 2px dotted #ffd700;
+        @include center(flex, space-between, center);
+        background-image: url("../img/pergamino.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+        .header__logo {width: 5rem;}
+        .header__menu{
+            display: flex;
+            gap: 1rem;
+        }
+        .header__nav{
+            @include center(flex, space-between, center);
+            gap: .9rem;
+        }
+        .header__link {
+            @include textConfiguration(.9rem, 800);
+            text-decoration-color: $colorText;
+        }
+        .header__user{
+            @include center(flex, space-between, center);
+            height: 50%;
+            gap: .9rem;
+        }
+        .header__icon{
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+}
+
+main {
+    .banner{
+        width: 100%;
+        padding: 4rem 0rem;
+        text-align: center;
+        background-image: url("../img/banner.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 50%;
+        color: $colorText;
+        &.banner h2{
+            width: 100%;
+            @include textConfiguration(3rem, 600);
+            margin: 10px;
+        }
+        &.banner p{
+            width: 50%;
+            @include textConfiguration(1.75rem, 400);
+            margin: 0 auto;
+            opacity: 0.7;
+        }
+    }
+    
+    .products{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 1rem;        
+        &.products article{
+            cursor: pointer;
+            text-align: center;
+        }
+        &.products img{
+            width: 100%;
+            margin: 1rem auto;
+        }
+        &.products h3{
+            @include textConfiguration(1.5rem, 500);
+            margin-bottom: .2rem;
+        }
+        &.products p{ @include textConfiguration(1rem, 400);}
+        &.products i {
+            display: inline-block;
+            width: 25px;
+            cursor: pointer;
+        }
+        .products__btn {@extend %button}
+    }
+    
+    .carrito {
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        background-color: #79d7ede0;
+        padding: 1.1rem;
+        position: fixed;
+        right: -50%;
+        top: 7rem;
+        box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.30);
+        /*horizontal, vertical, desenfoque, expancion, color y opacidad*/
+        &.carrito i {
+            display: inline-block;
+            width: 25px;
+            cursor: pointer;
+        }
+        &.carrito .heart-icon {
+            width: 100%;
+        }
+        .carrito h3 {
+            width: 100%;
+            @include textConfiguration(1.5rem, 600);
+            padding: 25px 0;
+            box-sizing: border-box;
+        }
+        .carrito p {
+            width: 100%;
+            @include textConfiguration(1.5rem, 600);
+            padding: 25px 0;
+            box-sizing: border-box;
+        }
+        
+        &.carrito div {
+            border-bottom: 1px solid #333333;
+            @include center(flex, space-between, center);
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        &.carrito img {
+            width: 20%;
+        }
+        &.carrito div i {
+            width: 25px;
+            cursor: pointer;
+        }
+        
+        &.carrito .delete-icon {
+            width: 100%;
+        }
+        &.carrito .heart-icon {
+            width: 100%;
+        }
+    }
+}
+
+footer{
+    width: 100%; 
+    padding: 1rem 0rem;
+    @include textConfiguration(.5em, 400);
+    background-image: url(../img/banner-galaxy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    @include center(flex, space-around, flex-start);
+    box-sizing: border-box;
+    gap: .5rem;
+    #copy{
+        color: #dab5f8;
+        background-color: #33088f;
+    } 
+    footer a[href*="www"] {
+        background-color: #8357f2;
+    }
+}
+
+@media (max-width: 820px) {
+    header {padding: 15px;}
+    header > img {width: 60px;}
+    header i {width: 30px;}
+    .products {grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));}
+    .products img {width: 150px;}
+    .carrito {width: 400px; top: 80px;}
+}
+
+@media (max-width: 480px) {
+    .banner {padding: 30px 0;}
+    .banner h2 { @include textConfiguration(18px, 600); }
+    .banner p { @include textConfiguration(16px, 600); }
+    .products {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .products img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    .product h3, .product p {padding: 0 10px;}
+    .carrito {
+        width: 100%;
+        box-shadow: none;
+    }
+    .carrito h2 {padding: 15px 0;}
+    .carrito div {
+        @include center(flex, space-around, center);
+        flex-direction: column;
+    }
+    .carrito img {width: 100px;}
+    .carrito p {margin: 0;}
+}

@@ -1,0 +1,131 @@
+body {
+    font-family: Playwrite AU SA;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: .01rem;
+    text-decoration: none; 
+    line-height: 1.25;
+}
+.header{
+    width: 100%;
+    padding: 1rem .8rem;
+    border: 2px dotted #ffd700;
+    background-image: url("../img/pergamino.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.header__logo {width: 5rem;}
+.header__menu{
+    display: flex;
+    gap: 1rem;
+}
+.header__nav{
+    display: flex;
+    gap: .9rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__link {
+    font-size: .9rem;
+    font-weight: 800;
+    text-decoration-color: #ad0608
+}
+.header__user{
+    display: flex;
+    height: 50%;
+    gap: .9rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__icon{
+    cursor: pointer;
+    box-sizing: border-box;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+img {max-width: 100%;}
+
+.norse { 
+    width: 80%;
+    margin: 0 auto;
+    padding: .7rem;
+    box-sizing: border-box;
+}
+
+.norse__title {
+    width: 100%;
+    font-size: clamp(2rem, 5vw,3rem);
+    line-height: 2;
+}
+
+.norse__text {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.norse h2 {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.norse p:last-child {
+    width: 100%;
+    font-size: .75rem;
+    font-size: 300;
+}
+
+button {
+    width: 300px;
+    border: 1px solid #cd94f0;
+    background-color: #cd94f0;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 auto;
+    display: block;
+}
+
+footer{
+    width: 100%; 
+    padding: 1rem 0rem;
+    text-align: center;
+    font-size: .5em;
+    background-image: url(../img/banner-galaxy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    display: flex;
+    box-sizing: border-box;
+    gap: .5rem;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+#copy{
+    color: #dab5f8;
+    background-color: #33088f;
+} 
+footer a[href*="www"] {
+    background-color: #8357f2;
+}
+
+@media (hover: hover) {
+    a:hover{/*responsivos*/
+        color: #ffd700;
+        background-color: #5e0591;
+    }
+    a:active{color: #fa0505;}
+    a:visited{
+        color: #5e0591;
+        background-color: #ffd700;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: #333;
+        color: #fff;
+    }
+}

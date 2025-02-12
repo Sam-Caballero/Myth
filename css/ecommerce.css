@@ -1,0 +1,275 @@
+main .products .products__btn {
+  display: block;
+  border: none;
+  border-radius: 30px;
+  color: #0d039f;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  font-weight: 600;
+  background-color: #79d7ed;
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  color: #0d039f;
+  font-size: clamp(0.5rem, 5vw, 1.25rem);
+  font-weight: 400;
+  text-align: center;
+  font-family: "Dancing Script", Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: 0.01rem;
+  line-height: 1.25;
+}
+
+header.header {
+  width: 100%;
+  padding: 1rem 0.8rem;
+  box-sizing: border-box;
+  border: 2px dotted #ffd700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../img/pergamino.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header .header__logo {
+  width: 5rem;
+}
+header .header__menu {
+  display: flex;
+  gap: 1rem;
+}
+header .header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.9rem;
+}
+header .header__link {
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration-color: #0d039f;
+}
+header .header__user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  gap: 0.9rem;
+}
+header .header__icon {
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+main .banner {
+  width: 100%;
+  padding: 4rem 0rem;
+  text-align: center;
+  background-image: url("../img/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 50%;
+  color: #0d039f;
+}
+main .banner.banner h2 {
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px;
+}
+main .banner.banner p {
+  width: 50%;
+  font-size: 1.75rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+main .products {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1rem;
+}
+main .products.products article {
+  cursor: pointer;
+  text-align: center;
+}
+main .products.products img {
+  width: 100%;
+  margin: 1rem auto;
+}
+main .products.products h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
+main .products.products p {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+main .products.products i {
+  display: inline-block;
+  width: 25px;
+  cursor: pointer;
+}
+main .carrito {
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgba(121, 215, 237, 0.8784313725);
+  padding: 1.1rem;
+  position: fixed;
+  right: -50%;
+  top: 7rem;
+  box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  /*horizontal, vertical, desenfoque, expancion, color y opacidad*/
+}
+main .carrito.carrito i {
+  display: inline-block;
+  width: 25px;
+  cursor: pointer;
+}
+main .carrito.carrito .heart-icon {
+  width: 100%;
+}
+main .carrito .carrito h3 {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 25px 0;
+  box-sizing: border-box;
+}
+main .carrito .carrito p {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 25px 0;
+  box-sizing: border-box;
+}
+main .carrito.carrito div {
+  border-bottom: 1px solid #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+main .carrito.carrito img {
+  width: 20%;
+}
+main .carrito.carrito div i {
+  width: 25px;
+  cursor: pointer;
+}
+main .carrito.carrito .delete-icon {
+  width: 100%;
+}
+main .carrito.carrito .heart-icon {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+  padding: 1rem 0rem;
+  font-size: 0.5em;
+  font-weight: 400;
+  text-align: center;
+  background-image: url(../img/banner-galaxy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: 0.5rem;
+}
+footer #copy {
+  color: #dab5f8;
+  background-color: #33088f;
+}
+footer footer a[href*=www] {
+  background-color: #8357f2;
+}
+
+@media (max-width: 820px) {
+  header {
+    padding: 15px;
+  }
+  header > img {
+    width: 60px;
+  }
+  header i {
+    width: 30px;
+  }
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .products img {
+    width: 150px;
+  }
+  .carrito {
+    width: 400px;
+    top: 80px;
+  }
+}
+@media (max-width: 480px) {
+  .banner {
+    padding: 30px 0;
+  }
+  .banner h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .banner p {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .products {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  .products img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  .product h3, .product p {
+    padding: 0 10px;
+  }
+  .carrito {
+    width: 100%;
+    box-shadow: none;
+  }
+  .carrito h2 {
+    padding: 15px 0;
+  }
+  .carrito div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .carrito img {
+    width: 100px;
+  }
+  .carrito p {
+    margin: 0;
+  }
+}/*# sourceMappingURL=ecommerce.css.map */
