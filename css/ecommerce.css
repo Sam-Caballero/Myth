@@ -42,6 +42,7 @@ header .header__logo {
 header .header__menu {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 header .header__nav {
   display: flex;

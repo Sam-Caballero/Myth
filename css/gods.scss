@@ -1,0 +1,167 @@
+$fontFamily: "Dancing Script", Arial, Helvetica, sans-serif;
+$color: #79d7ed;
+$colorText: #0d039f;
+
+@mixin textConfiguration($fSize, $fWeight) {
+    font-size: $fSize;
+    font-weight: $fWeight;
+    text-align: center;
+}
+@mixin center($display, $justifyContent, $alignItems) {
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+%button {
+    display: block;
+    border: none;
+    border-radius: 30px;
+    color: $colorText;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    font-weight: 600;
+    background-color: $color;
+    cursor: pointer;
+}
+
+body {
+    width: 100%;
+    color: $colorText;
+    @include textConfiguration(clamp(.5rem, 5vw,1.25rem), 400);
+    font-family: $fontFamily;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: .01rem;
+    line-height: 1.25;
+}
+
+header {
+    &.header {
+        width: 100%;
+        padding: 1rem .8rem;
+        box-sizing: border-box;
+        border: 2px dotted #ffd700;
+        @include center(flex, space-between, center);
+        background-image: url("../img/pergamino.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+        .header__logo {width: 5rem;}
+        .header__menu{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .header__nav{
+            @include center(flex, space-between, center);
+            gap: .9rem;
+        }
+        .header__link {
+            @include textConfiguration(.9rem, 800);
+            text-decoration-color: $colorText;
+        }
+        .header__user{
+            @include center(flex, space-between, center);
+            height: 50%;
+            gap: .9rem;
+        }
+        .header__icon{
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+}
+
+main {
+    .banner{
+        width: 100%;
+        padding: 4rem 0rem;
+        text-align: center;
+        background-image: url("../img/banner-gods2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 70%;
+        color: $colorText;
+        &.banner h2{
+            width: 100%;
+            @include textConfiguration(3rem, 600);
+            margin: 10px;
+        }
+        &.banner p{
+            width: 50%;
+            @include textConfiguration(1.75rem, 400);
+            margin: 0 auto;
+            opacity: 0.7;
+        }
+    }
+
+    .gods{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 1rem;
+        text-align: center;
+        input{
+            display: none;
+            &:checked + .gods__text {
+                max-height: 600px;
+            }
+        }
+        li {
+            list-style: none;
+            .gods__img {
+                width: 100%;
+                height: 500px;
+                margin: 1rem auto;
+            }
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                @include textConfiguration(1.5rem, 600);
+                letter-spacing: .05rem;
+                span {
+                    font-family: monospace;
+                    font-size: 1.5rem;
+                    color: #000000;
+                    transform: rotate(90deg);
+                    cursor: pointer;
+                }
+            }
+
+            .gods__text {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s;
+                p {
+                    @include textConfiguration(1rem, 400);
+                    letter-spacing: .05rem;
+                } 
+            }
+        }        
+    }
+}
+
+footer {
+    width: 100%; 
+    padding: 1rem 0rem;
+    @include textConfiguration(.5em, 400);
+    background-image: url(../img/banner-galaxy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    @include center(flex, space-around, flex-start);
+    box-sizing: border-box;
+    gap: .5rem;
+    #copy{
+        color: #dab5f8;
+        background-color: #33088f;
+    } 
+    footer a[href*="www"] {
+        background-color: #8357f2;
+    }
+}

@@ -21,6 +21,7 @@ body {
 .header__menu{
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 .header__nav{
     display: flex;
