@@ -52,6 +52,7 @@ header {
         .header__menu{
             display: flex;
             gap: 1rem;
+            align-items: center;
         }
         .header__nav{
             @include center(flex, space-between, center);
