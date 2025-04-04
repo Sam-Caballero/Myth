@@ -1,0 +1,369 @@
+$fontFamily: "Quintessential", Arial, Helvetica, sans-serif;
+$colorText: #0d039f;/*variables*/
+$colorBgL: #ffd700;
+$colorTxL: #5e0591;
+$colorGc: #79d7ed;
+
+$colorIcon: #656565;
+$mainColor: #000000; 
+$colorContainer: #202020;
+$buttonBall: #656565;
+
+@mixin container($blur, $shadowColor, $bgColor){
+    box-shadow: 0px 10px $blur $shadowColor;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: $bgColor;
+}
+
+@mixin textConfiguration($fSize, $fWeight) {
+    font-size: $fSize;
+    font-weight: $fWeight;
+    text-align: center;
+}
+
+@mixin flexcenter($display, $justifyContent, $alignItems) {
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin scrollbar{
+    &::-webkit-scrollbar {
+        width: 14px;
+        height: 18px;
+    }
+    &::-webkit-scrollbar-thumb {
+        height: 6px;
+        border: 4px solid #a24dfde0;
+        background-clip: padding-box;
+        border-radius: 7px;
+        background-color: #a24dfde0;
+    }
+    &::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+}
+
+@mixin a1110 {
+    @media screen and (max-width: 1110px) { @content };
+}
+@mixin a992 {
+    @media screen and (max-width: 992px) { @content };
+}
+@mixin a850 {
+    @media screen and (max-width: 850px) { @content };
+}
+@mixin tablet {
+    @media screen and (max-width: 768px) { @content };
+}
+@mixin a645 {
+    @media screen and (max-width: 645px) { @content };
+}
+@mixin phone {
+    @media screen and (max-width: 480px) { @content };
+}
+
+%button {
+    width: 80%;
+    margin: 10px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    align-items: center;
+    background-color: $colorBgL;
+    color: $colorTxL;
+    @include textConfiguration(20px, 500);
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.08);
+    }
+}
+
+@media (hover: hover) {
+    a:hover{/*responsivos*/
+        color: $colorTxL;
+        background-color: $colorBgL;
+        transform: scale(1.08);
+        box-shadow: 0px 10px 20px #202020;
+    }
+    i:hover{
+        color: $colorTxL;
+        background-color: $colorBgL;
+        transform: scale(1.08);
+        box-shadow: 0px 10px 20px #202020;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: #333;
+        color: #fff;
+    }
+    .section__etimologia{
+        color: $colorText;
+    }
+}
+
+h2{
+    color: #f7f377;
+    background-color: #301158;
+}
+h3{
+    color: aquamarine;
+    background-color: #150b4d;
+}
+
+header {
+    width: 100%;
+    padding: 1rem .8rem;
+    @include tablet { padding: 15px;}
+    box-sizing: border-box;
+    border: 2px dotted #ffd700;
+    @include flexcenter(flex, space-between, center);
+    background-image: url("../img/pergamino.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    .header__logo {width: 5rem; height: 50px;}
+    .header__user{
+        @include flexcenter(flex, space-between, center);
+        height: 50%;
+        gap: .9rem;
+        .header__icon{
+            position: relative;
+            cursor: pointer;
+            box-sizing: border-box;
+            &--container {
+                .carrito__count {
+                    position: absolute;
+                    top: 45px;
+                    background-color: $colorBgL;
+                    color: $colorTxL;
+                    width: 15px;
+                    height: 15px;
+                    @include flexcenter(flex, center, center);
+                    border-radius: 50%;
+                    span { font-size: 12px;}
+                }
+            }
+        }
+    }
+    .favoritos {
+        width: 45%;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 85px;
+        box-sizing: border-box;
+        background-color: #fa7eb3e0;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 20px -5px 10px -5px #00000030;
+        transition: all .25s ease;
+        @include tablet {
+            @include textConfiguration(10px, 400);
+            width: 400px; 
+            top: 80px;
+        }
+        @include phone {
+            @include textConfiguration(8px, 400);
+            h2 {padding: 15px 0;}
+            &__products {
+                flex-direction: column;
+            }
+            img {width: 100px;}
+            p {margin: 0;}
+            i { 
+                width: 20px;
+                img {width: 20px;} 
+            }
+        }
+        &.hidden__fav {display: none;}
+        &.favoritos i {
+            display: inline-block;
+            width: 30%;
+            padding: .5rem;
+            cursor: pointer;
+        }
+        .favoritos__row {
+            max-height: 360px;
+            overflow: auto;
+            @include scrollbar;
+            .favoritos__products {
+                border-bottom: 1px solid #333333;
+                @include flexcenter(flex, space-between, center);
+                padding: 15px;
+                box-sizing: border-box;
+                &:nth-child(even){background-color: #d7669670;}
+                .favoritos__cantidad {
+                    width: 50%;
+                    span {@include textConfiguration(20px, 600);}
+                }
+                img {width: 20%;}
+                h3 {
+                    width: 100%;
+                    @include textConfiguration(14px, 600);
+                    padding: 25px 0;
+                    box-sizing: border-box;
+                    background-color: transparent;
+                    color: #36879a;
+                }
+                p {
+                    width: 100%;
+                    @include textConfiguration(14px, 600);
+                    padding: 25px 0;
+                    box-sizing: border-box;
+                    color: #0c4451;
+                }
+                i {
+                    width: 30%;
+                    cursor: pointer;
+                    img {
+                        width: 50%;
+                        position: relative;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+    }
+    .carrito {
+        width: 45%;
+        position: fixed;
+        z-index: 1;
+        right: 0;
+        top: 85px;
+        box-sizing: border-box;
+        background-color: #79d7ede0;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: -20px -5px 10px -5px #00000030;
+        transition: all .25s ease;
+        .titleC {
+            color: #f7f377;
+            background-color: #301158;
+        }
+        @include tablet {
+            @include textConfiguration(10px, 400);
+            width: 400px; 
+            top: 80px;
+        }
+        @include phone {
+            @include textConfiguration(8px, 400);
+            h2 {padding: 15px 0;}
+            &__products {
+                flex-direction: column;
+            }
+            img {width: 100px;}
+            p {margin: 0;}
+            i { 
+                width: 20px;
+                img {width: 20px;} 
+            }
+        }
+        &.hidden__cart {display: none;}
+        &.carrito i {
+            display: inline-block;
+            width: 30%;
+            padding: .5rem;
+            cursor: pointer;
+        }
+        .carrito__row {
+            max-height: 227px;
+            overflow: auto;
+            @include scrollbar;
+            .carrito__products {
+                padding: 15px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #333333;
+                @include flexcenter(flex, space-between, center);
+                &:nth-child(even){background-color: #5eacbe70;}
+                .carrito__cantidad {
+                    width: 50%;
+                    span {
+                        @include textConfiguration(16px, 600);
+                        letter-spacing: 5px;
+                        &:first-child{cursor: pointer;}
+                        &:last-child{cursor: pointer;}
+                    }
+                }
+                img {width: 20%;}
+                h3 {
+                    width: 100%;
+                    @include textConfiguration(14px, 600);
+                    padding: 25px 0;
+                    box-sizing: border-box;
+                    background-color: transparent;
+                    color: #eb72c7;
+                }
+                p {
+                    width: 100%;
+                    @include textConfiguration(14px, 600);
+                    padding: 25px 0;
+                    box-sizing: border-box;
+                    color: #d70598;
+                }
+                i {
+                    width: 30%;
+                    cursor: pointer;
+                    img {
+                        width: 50%;
+                        position: relative;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+        .carrito__final {
+            h3{
+                color: aquamarine;
+                background-color: #150b4d;
+            }
+            span { @include textConfiguration(30px, 600);}
+        }
+        button { @extend %button;}
+    } 
+}
+
+body {
+    width: 100%;
+    color: $colorText;
+    @include textConfiguration(22px, 400);
+    font-family: $fontFamily;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: .01rem;
+    line-height: 1.25;
+    @include tablet { @include textConfiguration(18px, 400); }
+    @include phone { @include textConfiguration(14px, 400); }
+}
+
+footer{
+    width: 100%; 
+    padding: 2rem 0rem;
+    @include textConfiguration(12px, 400);
+    background-image: url(../img/banner-galaxy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    @include flexcenter(flex, space-around, flex-start);
+    box-sizing: border-box;
+    gap: .5rem;
+    #copy{
+        color: #dab5f8;
+        background-color: #33088f;
+    } 
+    nav {
+        a {
+            @include textConfiguration(12px, 400);
+        }
+    }
+    
+}

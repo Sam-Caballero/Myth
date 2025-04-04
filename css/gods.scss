@@ -1,0 +1,78 @@
+@import "./base";
+
+main {
+    .banner{
+        width: 100%;
+        padding: 4rem 0rem;
+        text-align: center;
+        background-image: url("../img/banner-gods2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 70%;
+        color: $colorText;
+        &.banner h2{
+            width: 100%;
+            @include textConfiguration(3rem, 600);
+            margin: 10px;
+            background-color: transparent;
+            color: $colorText;
+        }
+        &.banner p{
+            
+            width: 50%;
+            @include textConfiguration(1.75rem, 400);
+            margin: 0 auto;
+            opacity: 0.7;
+        }
+    }
+    .gods{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 1rem;
+        gap: 10px;
+        text-align: center;
+        input{
+            display: none;
+            &:checked + .gods__text {
+                max-height: 600px;
+            }
+        }
+        li {
+            list-style: none;
+            .gods__img {
+                width: 100%;
+                height: 500px;
+                margin: 1rem auto;
+            }
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                @include textConfiguration(1.5rem, 600);
+                letter-spacing: .05rem;
+                background-color: $colorGc;
+                span {
+                    font-family: monospace;
+                    font-size: 1.5rem;
+                    color: #000000;
+                    transform: rotate(90deg);
+                    cursor: pointer;
+                }
+            }
+
+            .gods__text {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s;
+                p {
+                    @include textConfiguration(1rem, 400);
+                    letter-spacing: .05rem;
+                } 
+            }
+        }        
+    }
+}

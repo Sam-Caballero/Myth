@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ecommerce.css">
+    <script src="Js/index.js" defer></script>
+    <title>Ecommerce</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><img class="header__logo" src="./img/tuxedo-cat.svg" title="Home" height="40"></a>
+        <section class="header__user">
+            <a href="gods.html"><i><img class="header__icon" src="./img/god.svg" title="Gods" height="25"></i></a>
+            <a href="norse.html"><i><img class="header__icon" src="./img/norse.svg" title="Norse" height="25"></i></a>
+            <a href="ecommerce.html"><i><img class="header__icon" src="./img/shopping-bag.svg" title="Productos"></i></a>
+            <i class="icon__heartMain header__icon"><img src="./img/heart.svg" title="Favoritos"></i>
+            <div class="header__icon--container">
+                <i class="icon__cartMain header__icon"><img src="./img/shopping-cart.svg" title="Carrito"></i>
+                <div class="carrito__count">
+					<span id="contador">0</span>
+				</div>
+            </div>
+            <i><img class="header__icon" src="./img/user.svg" title="User"></i>
+        </section>
+        <article class="favoritos hidden__fav">
+            <h2>Favoritos</h2>
+            <i class="icon__cartMain"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Carrito"></i>
+            <i class="icon__xF"><img src="img/x.svg" alt="Icono Cerrar" title="Cerrar"></i>
+            <section class="favoritos__row">
+                <div class="favoritos__products">
+                    <div class="favoritos__cantidad">
+                        <span class="favoritos__cantidad--menos"><</span>
+                        <span class="favoritos__cantidad--num">1</span>
+                        <span class="favoritos__cantidad--mas">></span>
+                    </div>
+                    <img src="img/pandora.png" alt="caja de pandora">
+                    <h3 class="favoritos__nombre">Caja de Pandora</h3>
+                    <p class="favoritos__price">$1.00</p>
+                    <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar"></i>
+                    <i class="icon__delete"><img src="img/delete.svg" alt="Icono Quitar" title="Borrar"></i>
+                </div>
+                <div class="favoritos__products">
+                    <div class="favoritos__cantidad">
+                        <span class="favoritos__cantidad--menos"><</span>
+                        <span class="favoritos__cantidad--num">1</span>
+                        <span class="favoritos__cantidad--mas">></span>
+                    </div>
+                    <img src="img/necro.png" alt="Necronomicon">
+                    <h3 class="favoritos__nombre">Necronomicon</h3>
+                    <p class="favoritos__price">$1.00</p>
+                    <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar"></i>
+                    <i class="icon__delete"><img src="img/delete.svg" alt="Icono Quitar" title="Borrar"></i>
+                </div>
+            </section>
+        </article>
+        <article class="carrito hidden__cart">
+            <h2>Carrito</h2>
+            <i class="icon__heartMain"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos"></i>
+            <i class="icon__xC"><img src="img/x.svg" alt="Icono Cerrar" title="Cerrar"></i>
+            <section class="carrito__row">
+                <div class="carrito__products">
+                    <div class="carrito__cantidad">
+                        <span class="carrito__cantidad--menos" title="Menos"><</span>
+                        <span class="carrito__cantidad--num">1</span>
+                        <span class="carrito__cantidad--mas" title="Más">></span>
+                    </div>
+                    <img src="img/necro.png" alt="Necronomicon">
+                    <h3 class="carrito__nombre">Necronomicon</h3>
+                    <p class="carrito__price">$1.00</p>
+                    <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Mover a Favoritos"></i>
+                    <i class="icon__delete"><img src="img/delete.svg" alt="Icono Quitar" title="Borrar"></i>
+                </div>
+                <div class="carrito__products">
+                    <div class="carrito__cantidad">
+                        <span class="carrito__cantidad--menos" title="Menos"><</span>
+                        <span class="carrito__cantidad--num">1</span>
+                        <span class="carrito__cantidad--mas" title="Más">></span>
+                    </div>
+                    <img src="img/Mjolnir.png" alt="Mjolnir">
+                    <h3 class="carrito__nombre">Mjolnir</h3>
+                    <p class="carrito__price">$1.00</p>
+                    <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Mover a Favoritos"></i>
+                    <i class="icon__delete"><img src="img/delete.svg" alt="Icono Quitar" title="Borrar"></i>
+                </div>
+            </section>
+            <section class="carrito__final">
+                <h3>Total: </h3>
+                <span class="carrito__total">$2.00</span>
+            </section>
+            <button>Hacer pedido</button>
+        </article>
+    </header>
+    <main>
+        <section class="banner">
+            <h2>Productos nuevos</h2>
+            <p>Conoce nuestros productos nuevos</p>
+        </section>  
+    
+        <section class="products">
+            <article class="products__item">
+                <img src="img/espejo.png" alt="Espejo de Obsidiana">
+                <h3 id="p1">Espejo de Obsidiana</h3>
+                <p>$1000.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/abaco.png" alt="Contador Lunar">
+                <h3 id="p2">Contador Lunar</h3>
+                <p>$950.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/Gungnir.png" alt="Lanza">
+                <h3 id="p3">Lanza</h3>
+                <p>$2500.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/hibisco.png" alt="Flor de lava">
+                <h3 id="p4">Flor de lava</h3>
+                <p>$800.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/helm.png" alt="Casco antiguo">
+                <h3 id="p5">Casco antiguo</h3>
+                <p>$900.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/Ccollar.png" alt="Collar antiguo">
+                <h3 id="p6">Collar antiguo</h3>
+                <p>$1550.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/lluvia.png" alt="Agua de lluvia">
+                <h3 id="p7">Agua de lluvia</h3>
+                <p>$700.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/arco.png" alt="Arco y flechas">
+                <h3 id="p8">Arco y flechas</h3>
+                <p>$3500.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/Shield.png" alt="Recuerdo de Guerra">
+                <h3 id="p9">Recuerdo de Guerra</h3>
+                <p>$4150.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/estatua.png" alt="Estatua">
+                <h3 id="p10">Estatua</h3>
+                <p>$750.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/piramide.png" alt="Pequeña Piramide">
+                <h3 id="p11">Pequeña Piramide</h3>
+                <p>$850.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/espada.png" alt="Espada">
+                <h3 id="p12">Espada</h3>
+                <p>$1850.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/loto.png" alt="Flor de Loto">
+                <h3 id="p13">Flor de Loto</h3>
+                <p>$1300.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/lamp.png" alt="Lampara">
+                <h3 id="p14">Lampara</h3>
+                <p>$600.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/baba-yaga.png" alt="Pequeña casa">
+                <h3 id="p15">Pequeña casa</h3>
+                <p>$1350.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/pandora.png" alt="caja de pandora">
+                <h3 id="p16">Caja de Pandora</h3>
+                <p>$1000000000000.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/necro.png" alt="Necronomicon">
+                <h3 id="p17">Necronomicon</h3>
+                <p>$1000000000000.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+            <article class="products__item">
+                <img src="img/Mjolnir.png" alt="Mjolnir">
+                <h3 id="p18">Mjolnir</h3>
+                <p>$1000000000000.00</p>
+                <i class="icon__heart"><img src="img/heart.svg" alt="Icono Favoritos" title="Favoritos" class="icon__heart"></i>
+                <i class="icon__cart"><img src="img/shopping-cart.svg" alt="Icono Carrito" title="Comprar" class="icon__cart"></i>
+                <button class="products__btn icon__cart">Agregar a carrito</button>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <small id="copy"> &copy;Toda la Informacióncontenida en esta pagina ha sido sacada de internet &star; &mho; &star;
+            </small>
+        </section>
+        
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="ecommerce.html">Products</a> 
+        <a href="gods.html">Gods</a>
+        <a href="norse.html">Norse</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.tiktok.com/">Tik Tok</a>
+        <a href="https://www.youtube.com/">Youtube</a>
+        </nav>
+    </footer>
+</body>
+</html>

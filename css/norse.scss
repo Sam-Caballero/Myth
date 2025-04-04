@@ -1,0 +1,31 @@
+@import "./base";
+
+main {
+    .norse { 
+        width: 80%;
+        margin: 0 auto;
+        padding: 1rem 0.1rem 2rem 0.1rem;
+        box-sizing: border-box;
+        img {max-width: 100%;}
+        .norse__title {
+            width: 100%;
+            font-size: clamp(2rem, 5vw,3rem);
+            line-height: 2;
+        }
+        .norse__text {
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        h2 {
+            width: 100%;
+            font-size: 1rem;
+            background-color: transparent;
+            color: $colorText;
+        }
+        p:last-child {
+            width: 100%;
+            font-size: .75rem;
+            font-size: 300;
+        }
+    }
+}

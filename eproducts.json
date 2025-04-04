@@ -1,0 +1,128 @@
+[
+    {
+        "id": "p1",
+        "name": "Espejo de Obsidiana",
+        "price": 1000.00,
+        "image": "img/espejo.png",
+        "available": true
+    },
+    {
+        "id": "p2",
+        "name": "Contador Lunar",
+        "price": 950.00,
+        "image": "img/abaco.png",
+        "available": true
+    },
+    {
+        "id": "p3",
+        "name": "Lanza",
+        "price": 2500.00,
+        "image": "img/Gungnir.png",
+        "available": true
+    },
+    {
+        "id": "p4",
+        "name": "Flor de lava",
+        "price": 800.00,
+        "image": "img/hibisco.png",
+        "available": true
+    },
+    {
+        "id": "p5",
+        "name": "Casco antiguo",
+        "price": 900.00,
+        "image": "img/helm.png",
+        "available": true
+    },
+    {
+        "id": "p6",
+        "name": "Collar antiguo",
+        "price": 1550.00,
+        "image": "img/Ccollar.png",
+        "available": true
+    },
+    {
+        "id": "p7",
+        "name": "Agua de lluvia",
+        "price": 700.00,
+        "image": "img/lluvia.png",
+        "available": true
+    },
+    {
+        "id": "p8",
+        "name": "Arco y flechas",
+        "price": 3500.00,
+        "image": "img/arco.png",
+        "available": true
+    },
+    {
+        "id": "p9",
+        "name": "Recuerdo de Guerra",
+        "price": 4150.00,
+        "image": "img/Shield.png",
+        "available": true
+    },
+    {
+        "id": "p10",
+        "name": "Estatua",
+        "price": 750.00,
+        "image": "img/estatua.png",
+        "available": true
+    },
+    {
+        "id": "p11",
+        "name": "Pequeña Piramide",
+        "price": 850.00,
+        "image": "img/piramide.png",
+        "available": true
+    },
+    {
+        "id": "p12",
+        "name": "Espada",
+        "price": 1850.00,
+        "image": "img/espada.png",
+        "available": true
+    },
+    {
+        "id": "p13",
+        "name": "Flor de Loto",
+        "price": 1300.00,
+        "image": "img/loto.png",
+        "available": true
+    },
+    {
+        "id": "p14",
+        "name": "Lampara",
+        "price": 600.00,
+        "image": "img/lamp.png",
+        "available": true
+    },
+    {
+        "id": "p15",
+        "name": "Pequeña casa",
+        "price": 1350.00,
+        "image": "img/casa.png",
+        "available": true
+    },
+    {
+        "id": "p16",
+        "name": "Caja de Pandora",
+        "price": 1000000000.00,
+        "image": "img/pandora.png",
+        "available": false
+    },
+    {
+        "id": "p17",
+        "name": "Necronomicon",
+        "price": 1000000000.00,
+        "image": "img/necro.png",
+        "available": false
+    },
+    {
+        "id": "p18",
+        "name": "Mjolnir",
+        "price": 1000000000.00,
+        "image": "img/Mjolnir.png",
+        "available": false
+    }
+]
